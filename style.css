@@ -1,11 +1,18 @@
 /*color palette*/
 :root {
---antique-brass: #cb997eff;
---desert-sand: #ddbea9ff;
---champagne-pink: #ffe8d6ff;
---ash-gray: #b7b7a4ff;
---artichoke: #a5a58dff;
---ebony: #6b705cff;
+    --antique-brass: #cb997eff;
+    --desert-sand: #ddbea9ff;
+    --champagne-pink: #ffe8d6ff;
+    --ash-gray: #b7b7a4ff;
+    --artichoke: #a5a58dff;
+    --ebony: #6b705cff;
+}
+
+/*Ubuntu font*/
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap');
+
+* {
+    font-family: 'Ubuntu', sans-serif;
 }
 
 html, body {
@@ -14,17 +21,19 @@ html, body {
     margin: 0;
 }
 
+.inc-button {
+    background-color: #8CAF5F;
+}
+
+.dec-button {
+    background-color: #B57E6D;
+}
+
 .container-fluid {
     background-color: whitesmoke;
 }
   #break-label, #session-label {
     text-align: center;
     margin: 10px;
-  }
-  
-  .btn {
-    background-color: red;
-    width: 5rem;
-    height: 5rem;
   }
   
