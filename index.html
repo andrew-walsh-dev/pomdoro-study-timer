@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8 name="viewport" content="width=device-width, initial-scale=1">
+    <title>Pomodoro Timer</title>
+</head>
+
+<body>
+    <div id=main>
+        <p id="break-label">Break Length: </p>
+        <p id="break-length">5</p>
+
+        <p id="session-label">Session Length: </p>
+        <p id="session-length">25</p>
+        <br>
+
+        <button id="break-decrement" class="btn btn-small" onclick="decrementLength('break-length')">DEC BREAk</button>
+
+        <button id="session-decrement" class="btn btn-small" onclick="decrementLength('session-length')">Dec
+            SESS</button>
+
+        <button id="break-increment" class="btn btn-small" onclick="incrementLength('break-length')">INC BREAk</button>
+
+        <button id="session-increment" class="btn btn-small" onclick="incrementLength('session-length')">INC
+            SESS</button>
+
+        <p id="timer-label">Session</p>
+        <p id="time-left"></p>
+
+        <button id="start_stop" class="btn btn-small" onclick="toggleTimer()">START/<br>STOP</button>
+
+        <button id="reset" class="btn btn-small" onclick="reset()">RESET</button>
+
+        <audio id='beep'
+            src="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav">
+    </div>
+</body>
+
+</html>
