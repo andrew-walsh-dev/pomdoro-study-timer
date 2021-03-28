@@ -1,11 +1,22 @@
-#main {
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    border: 5px solid black;
-  }
-  
+/*color palette*/
+:root {
+--antique-brass: #cb997eff;
+--desert-sand: #ddbea9ff;
+--champagne-pink: #ffe8d6ff;
+--ash-gray: #b7b7a4ff;
+--artichoke: #a5a58dff;
+--ebony: #6b705cff;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+}
+
+.container-fluid {
+    background-color: whitesmoke;
+}
   #break-label, #session-label {
     text-align: center;
     margin: 10px;
