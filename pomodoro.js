@@ -88,11 +88,25 @@ $(function() {
   displayTime('session');
 });
 
+
 document.getElementById("beep").volume = 0.1;
 
 window.setInterval(countdown, 10);
 function countdown() { 
-  if (timerRunning && totalSecondsSession >= 0) {
+    if (timerRunning) {
+     document.querySelector("#break-increment").disabled = true;
+     document.querySelector("#break-decrement").disabled = true;
+     document.querySelector("#session-increment").disabled = true;
+     document.querySelector("#session-decrement").disabled = true;
+    }
+    else {
+     document.querySelector("#break-increment").disabled = false;
+     document.querySelector("#break-decrement").disabled = false;
+     document.querySelector("#session-increment").disabled = false;
+     document.querySelector("#session-decrement").disabled = false;
+    }
+
+    if (timerRunning && totalSecondsSession >= 0) {
        totalSecondsSession -= 1;
        displayTime('session');
     }
