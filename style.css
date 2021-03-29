@@ -19,8 +19,12 @@ html, body {
     height: 100%;
     width: 100%;
     margin: 0;
+    background-color: #F0EAD6; 
 }
 
+body {
+    padding: 2em;
+}
 .inc-button {
     background-color: #8CAF5F;
 }
@@ -29,11 +33,10 @@ html, body {
     background-color: #B57E6D;
 }
 
-.container-fluid {
-    background-color: whitesmoke;
+.ctr-button {
+    background-color: #6DB59A;
 }
-  #break-label, #session-label {
-    text-align: center;
-    margin: 10px;
-  }
+
+.container-fluid {
+}
   
