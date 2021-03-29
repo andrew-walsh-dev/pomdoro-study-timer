@@ -2,43 +2,62 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8 name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8 name=" viewport" content="width=device-width, initial-scale=1">
     <title>Pomodoro Timer</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <div id=main class="container-fluid">
-        <p id="break-label">Break Length: </p>
-        <p id="break-length">5</p>
+    <div id=main class="container-fluid h-100 d-flex flex-column justify-content-center">
+        <h1 class="p-2 mt-0 text-center"><i class="fas fa-stopwatch"></i> Pomodoro Study Timer</h1>
+        <h6 class="text-center pb-5">Maximize your productivity!</h6>
 
-        <p id="session-label">Session Length: </p>
-        <p id="session-length">25</p>
-        <br>
+        <h4 id="timer-label" class="text-center">Time Remaining:</h4>
+        <p id="time-left" class="text-center mb-3"></p>
 
-        <button id="break-decrement" class="btn btn-small" onclick="decrementLength('break-length')">DEC BREAk</button>
+        <div class="d-flex justify-content-center mb-5">
+            <button id="start_stop" class="btn ctr-button mr-2" onclick="toggleTimer()"><i class="fas fa-play"></i><i
+                    class="fas fa-stop pb-xl-1"></i></button>
 
-        <button id="session-decrement" class="btn btn-small" onclick="decrementLength('session-length')">Dec
-            SESS</button>
+            <button id="reset" class="btn ctr-button" onclick="reset()">RESET</button>
+        </div>
 
-        <button id="break-increment" class="btn btn-small" onclick="incrementLength('break-length')">INC BREAk</button>
+        <div class="d-flex align-items-center">
+            <p id="break-label" class="ml-5">Break Length: </p>
+            <p id="break-length" class="pl-2">5 minutes</p>
 
-        <button id="session-increment" class="btn btn-small" onclick="incrementLength('session-length')">INC
-            SESS</button>
+            <p id="session-label" class="ml-auto">Session Length: </p>
+            <p id="session-length" class="pl-2 mr-5">25 minutes</p>
+            <br>
+        </div>
 
-        <p id="timer-label">Session</p>
-        <p id="time-left"></p>
+        <div id="buttons-container" class="d-flex justify-content-center">
+            <button id="break-increment" class="btn inc-button mr-3" onclick="incrementLength('break-length')"><i
+                    class="fas fa-plus"></i></button>
+            <button id="break-decrement" class="btn dec-button mr-auto" onclick="decrementLength('break-length')"><i
+                    class="fas fa-minus"></i></button>
 
-        <button id="start_stop" class="btn btn-small" onclick="toggleTimer()">START/<br>STOP</button>
+            <button id="session-increment" class="btn inc-button ml-auto" onclick="incrementLength('session-length')"><i
+                    class="fas fa-plus"></i></button>
 
-        <button id="reset" class="btn btn-small" onclick="reset()">RESET</button>
+            <button id="session-decrement" class="btn dec-button ml-3" onclick="decrementLength('session-length')"><i
+                    class="fas fa-minus"></i></button>
+
+
+        </div>
+
+
+
 
         <audio id='beep'
             src="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav">
 
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-        <script src="pomodoro.js"></script>
+            <script src="https://kit.fontawesome.com/26d2d1eb84.js" crossorigin="anonymous"></script>
+            <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+                integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+            <script src="pomodoro.js"></script>
     </div>
 </body>
 

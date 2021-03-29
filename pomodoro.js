@@ -26,7 +26,7 @@ function fancyTimeFormat(duration)
 }
 
 function incrementLength(id) {
-  if (Number(document.getElementById(id).innerHTML) >= 60) {
+  if (Number(document.getElementById(id).innerHTML.split(" ")[0]) >= 60) {
     return null;
   }
   if (id == "session-length") {
@@ -36,12 +36,13 @@ function incrementLength(id) {
     totalSecondsBreak += 60;
   }
   let currentVal = document.getElementById(id).innerHTML;
-  document.getElementById(id).innerHTML = Number(currentVal) + 1;
+  document.getElementById(id).innerHTML = Number(currentVal.split(" ")[0]) + 1;
+  document.getElementById(id).innerHTML += " minutes"
   displayTime('session');
 }
 
 function decrementLength(id) {
-  if (Number(document.getElementById(id).innerHTML) <= 1) {
+  if (Number(document.getElementById(id).innerHTML.split(" ")[0]) <= 1) {
     return null;
   }
   if (id == "session-length") {
@@ -51,13 +52,14 @@ function decrementLength(id) {
     totalSecondsBreak -= 60;
   }
   let currentVal = document.getElementById(id).innerHTML;
-  document.getElementById(id).innerHTML = Number(currentVal) - 1;
+  document.getElementById(id).innerHTML = Number(currentVal.split(" ")[0]) - 1;
+  document.getElementById(id).innerHTML += " minutes"
   displayTime('session');
 }
 
 function displayTime(type) {
   if (type == "session") {
-    document.getElementById("time-left").textContent = fancyTimeFormat(totalSecondsSession)
+    document.getElementById("time-left").textContent = fancyTimeFormat(totalSecondsSession);
   }
   else {
     document.getElementById("time-left").innerHTML = fancyTimeFormat(totalSecondsBreak)
