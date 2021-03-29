@@ -67,13 +67,13 @@ function displayTime(type) {
 }
 
 function reset() {
-  document.getElementById("break-length").innerHTML = 5;
-  document.getElementById("session-length").innerHTML = 25;
+  document.getElementById("break-length").innerHTML = "5 minutes";
+  document.getElementById("session-length").innerHTML = "25 minutes";
   totalSecondsSession = 60 * 25;
   totalSecondsBreak = 60 * 5;
   timerRunning = false;
   displayTime('session');
-  document.getElementById("timer-label").innerHTML = "Session";
+  document.getElementById("timer-label").innerHTML = "Time Remaining:";
   breakTime = false;
   
   sound.pause();
@@ -88,16 +88,18 @@ $(function() {
   displayTime('session');
 });
 
-window.setInterval(countdown, 1000);
+document.getElementById("beep").volume = 0.1;
+
+window.setInterval(countdown, 10);
 function countdown() { 
   if (timerRunning && totalSecondsSession >= 0) {
        totalSecondsSession -= 1;
        displayTime('session');
     }
-    if (document.getElementById("time-left").innerHTML == "00:0-1") {
+    if (document.getElementById("time-left").innerHTML == "-1:0-1") {
       sound.play();
       breakTime = true;
-      document.getElementById("timer-label").innerHTML = "Break";
+      document.getElementById("timer-label").innerHTML = "Time Remaining (Break):";
       while (document.getElementById("time-left").innerHTML != '' + fancyTimeFormat(totalSecondsBreak)) {
         console.log(displayTime('break'));
       }
@@ -106,12 +108,12 @@ function countdown() {
       totalSecondsBreak -= 1;
       displayTime('break');
     }
-    if (document.getElementById("time-left").innerHTML == "00:0-1") {
+    if (document.getElementById("time-left").innerHTML == "-1:0-1") {
       sound.play()
-    totalSecondsSession = Number(document.getElementById("session-length").innerHTML) * 60;
-    totalSecondsBreak = Number(document.getElementById("break-length").innerHTML) * 60;
+    totalSecondsSession = Number(document.getElementById("session-length").innerHTML.split(" ")[0]) * 60;
+    totalSecondsBreak = Number(document.getElementById("break-length").innerHTML.split(" ")[0]) * 60;
       breakTime = false;
-      document.getElementById("timer-label").innerHTML = "Session"
+      document.getElementById("timer-label").innerHTML = "Time Remaining:"
       displayTime('session');
     }
 }
