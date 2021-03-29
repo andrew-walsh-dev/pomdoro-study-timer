@@ -37,6 +37,11 @@ body {
     background-color: #6DB59A;
 }
 
-.container-fluid {
+#break-increment {
+    margin-left: 15%;
+}
+
+#session-decrement {
+    margin-right: 17%;
 }
   
