@@ -23,7 +23,7 @@ html, body {
 }
 
 body {
-    padding: 2em;
+    padding: 0 2em 2em 2em
 }
 .inc-button {
     background-color: #8CAF5F;
