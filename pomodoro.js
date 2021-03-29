@@ -91,7 +91,7 @@ $(function() {
 
 document.getElementById("beep").volume = 0.1;
 
-window.setInterval(countdown, 10);
+window.setInterval(countdown, 1000);
 function countdown() { 
     if (timerRunning) {
      document.querySelector("#break-increment").disabled = true;
